@@ -1,19 +1,146 @@
-  .container {
-    margin: auto;
-    max-width: 500px;
-    font-family: sans-serif;
-  }
-  .heading {
-    color: rebeccapurple;
-  }
-  .nav-links {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-  }
-  .nav-link-item {
-    padding-right: 2rem;
-  }
-  .nav-link-text {
-    color: black;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap");
+body {
+  margin: 0;
+  font-weight: 800;
+}
+header {
+  font-family: "Noto Sans JP", sans-serif;
+}
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  font-family: "Noto Sans JP", sans-serif;
+
+  margin-top: 30px;
+}
+nav {
+  float: right;
+}
+.nav-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav-link-item {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+.nav-link-text {
+  color: #3f4d96;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.nav-link-text:hover {
+  color: #2d3769;
+}
+.nav-link-text::before {
+  content: "";
+  display: block;
+  height: 5px;
+  position: absolute;
+  background-color: #3f4d96;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+.nav-link-text:hover::before {
+  width: 100%;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Montserrat:wght@100&family=Noto+Sans&family=Noto+Sans+JP:wght@300&family=Source+Sans+Pro:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Source+Sans+Pro:wght@200&display=swap");
+.titre {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 25px;
+  color: #393838;
+  text-align: center;
+  width: 1228px;
+  font-weight: bold;
+  padding-top: 60px;
+  /* margin-top: 500px; */
+}
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #393838;
+  width: 1228px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+.tech {
+  margin-top: 60px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+.items {
+  width: 1100px;
+  padding: 10px;
+  text-align: center;
+  margin-left: 50px;
+  color: #393838;
+}
+.item {
+  width: 250px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #393838;
+}
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Montserrat:wght@100&family=Noto+Sans&family=Noto+Sans+JP:wght@300&family=Raleway:wght@300;400&family=Source+Sans+Pro:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
+.title {
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  color: #393838;
+  margin-top: 25px;
+}
+.text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #393838;
+}
+.backgroundImage {
+  height: 50vh;
+  margin-top: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.blackOverlay {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+.contentBox {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+}
+.statistics {
+  width: 1000px;
+  margin-left: -150px;
+}
+.statistic {
+  width: 230px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
