@@ -1,5 +1,6 @@
 // Step 1: Import React
 import * as React from "react";
+import { useState } from "react";
 import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
@@ -25,23 +26,37 @@ import "../utils/font-awesome";
 import { Link } from "gatsby";
 
 // Step 2: Define your component
-const handleSubmit = (e) => {
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode({ "form-name": "contact", ...formState }),
-  })
-    .then(() => alert("Success!"))
-    .catch((error) => alert(error));
-
-  e.preventDefault();
-};
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
 const IndexPage = (props) => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    objet: "",
+    besoin: "",
+  });
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formState }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  };
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
   return (
     <Layout pageTitle="Home Page">
       <Link to="/">
@@ -465,20 +480,38 @@ const IndexPage = (props) => {
                 <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
                   <Form.Control
                     type="text"
+                    name="name"
                     placeholder="Nom ou raison social"
+                    value={formState.name}
+                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
-                  <Form.Control type="email" placeholder="Email" />
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
                 <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
-                  <Form.Control type="text" placeholder="Objet" />
+                  <Form.Control
+                    type="text"
+                    name="objet"
+                    placeholder="Objet"
+                    value={formState.objet}
+                    onChange={handleChange}
+                  />
                 </Form.Group>
                 <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
                   <Form.Control
                     as="textarea"
                     rows="8"
+                    name="besoin"
                     placeholder="Exprimez votre besoin ..."
+                    value={formState.besoin}
+                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Button
