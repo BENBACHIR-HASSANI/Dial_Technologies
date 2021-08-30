@@ -8,7 +8,7 @@ import {
   logo,
   header,
 } from "./layout.module.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {

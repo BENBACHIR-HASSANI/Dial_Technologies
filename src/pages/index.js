@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 import { graphql } from "gatsby";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import {
   titre,
   tech,
@@ -19,9 +20,27 @@ import {
   statistics,
   open_form,
 } from "../components/layout.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../utils/font-awesome";
 import { Link } from "gatsby";
 
 // Step 2: Define your component
+const handleSubmit = (e) => {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({ "form-name": "contact", ...formState }),
+  })
+    .then(() => alert("Success!"))
+    .catch((error) => alert(error));
+
+  e.preventDefault();
+};
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
 const IndexPage = (props) => {
   return (
     <Layout pageTitle="Home Page">
@@ -432,36 +451,50 @@ const IndexPage = (props) => {
         <p className={subtitle}>
           Programmons un meeting pour discuter votre projet
         </p>
-        <button className={open_form} id="open_form">
-          Soumettre votre demande
-        </button>
-        <form
-          className="form contact-form"
-          method="POST"
-          name="contact"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <div className="form-row">
-            <label htmlFor="name">Nom ou raison social</label>
-            <input type="text" name="name" id="name" />
-          </div>
-          <div className="form-row">
-            <label htmlFor="email">Email</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div className="form-row">
-            <label htmlFor="objet">Objet</label>
-            <input type="text" name="objet" id="objet" />
-          </div>
-          <div className="form-row">
-            <label htmlFor="besoin">Exprimez votre besoin ...</label>
-            <textarea type="text" name="besoin" id="besoin"></textarea>
-          </div>
-          <button type="submit" className="btn block">
-            ENVOYER
-          </button>
-        </form>
+        <Container>
+          <Row>
+            <Col lg={6} style={{ marginLeft: "25%" }}>
+              <Form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
+                  <Form.Control
+                    type="text"
+                    placeholder="Nom ou raison social"
+                  />
+                </Form.Group>
+                <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
+                  <Form.Control type="email" placeholder="Email" />
+                </Form.Group>
+                <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
+                  <Form.Control type="text" placeholder="Objet" />
+                </Form.Group>
+                <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
+                  <Form.Control
+                    as="textarea"
+                    rows="8"
+                    placeholder="Exprimez votre besoin ..."
+                  />
+                </Form.Group>
+                <Button
+                  type="submit"
+                  style={{
+                    marginBottom: "30px",
+                    width: "200px",
+                    marginLeft: "200px",
+                  }}
+                >
+                  ENVOYER
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </Layout>
   );
