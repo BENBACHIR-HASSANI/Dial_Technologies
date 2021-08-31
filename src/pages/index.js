@@ -19,10 +19,9 @@ import {
   contentBox,
   statistic,
   statistics,
-  open_form,
 } from "../components/layout.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../utils/font-awesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import "../utils/font-awesome";
 import { Link } from "gatsby";
 
 // Step 2: Define your component
