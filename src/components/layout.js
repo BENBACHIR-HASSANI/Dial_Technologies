@@ -9,6 +9,7 @@ import {
   header,
 } from "./layout.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./Footer";
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -53,6 +54,7 @@ const Layout = ({ pageTitle, children }) => {
           {children}
         </main>
       </div>
+      <Footer />
     </div>
   );
 };

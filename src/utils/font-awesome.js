@@ -1,3 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-library.add(faUser);
+import {
+  faPhoneAlt,
+  faEnvelope,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faPhoneAlt, faEnvelope, faMapMarkerAlt);

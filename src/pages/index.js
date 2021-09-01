@@ -4,7 +4,7 @@ import { useState } from "react";
 import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import {
   titre,
@@ -22,7 +22,6 @@ import {
 } from "../components/layout.module.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import "../utils/font-awesome";
-import { Link } from "gatsby";
 
 // Step 2: Define your component
 const IndexPage = (props) => {
@@ -32,6 +31,13 @@ const IndexPage = (props) => {
     objet: "",
     besoin: "",
   });
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
   const handleChange = (e) => {
     setFormState({
       ...formState,
@@ -49,13 +55,7 @@ const IndexPage = (props) => {
 
     e.preventDefault();
   };
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
+
   return (
     <Layout pageTitle="Home Page">
       <Link to="/">
@@ -469,54 +469,58 @@ const IndexPage = (props) => {
           <Row>
             <Col lg={6} style={{ marginLeft: "25%" }}>
               <Form
+                onSubmit={handleSubmit}
                 name="contact"
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
                   <Form.Control
+                    id="name"
                     type="text"
                     name="name"
-                    placeholder="Nom ou raison social"
-                    value={formState.name}
                     onChange={handleChange}
+                    value={formState.name}
+                    placeholder="Nom ou raison social"
                   />
                 </Form.Group>
                 <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
                   <Form.Control
+                    id="email"
                     type="email"
                     name="email"
-                    placeholder="Email"
-                    value={formState.email}
                     onChange={handleChange}
+                    value={formState.email}
+                    placeholder="Email"
                   />
                 </Form.Group>
                 <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
                   <Form.Control
+                    id="objet"
                     type="text"
                     name="objet"
-                    placeholder="Objet"
-                    value={formState.objet}
                     onChange={handleChange}
+                    value={formState.objet}
+                    placeholder="Objet"
                   />
                 </Form.Group>
                 <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
                   <Form.Control
+                    id="besoin"
                     as="textarea"
                     rows="8"
                     name="besoin"
-                    placeholder="Exprimez votre besoin ..."
-                    value={formState.besoin}
                     onChange={handleChange}
+                    value={formState.besoin}
+                    placeholder="Exprimez votre besoin ..."
                   />
                 </Form.Group>
                 <Button
                   type="submit"
                   style={{
-                    marginBottom: "30px",
+                    marginBottom: "50px",
                     width: "200px",
                     marginLeft: "200px",
                   }}
