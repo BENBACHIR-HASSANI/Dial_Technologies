@@ -470,12 +470,12 @@ const IndexPage = (props) => {
             <Col lg={6} style={{ marginLeft: "25%" }}>
               <Form
                 onSubmit={handleSubmit}
-                name="contact"
+                name="Contact"
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
               >
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="Contact" />
                 <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
                   <Form.Control
                     id="name"
