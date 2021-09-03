@@ -184,15 +184,17 @@ const IndexPage = (props) => {
         >
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="ANAPEC"
-                src="../images/ANAPEC.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/anapec">
+                <StaticImage
+                  alt="ANAPEC"
+                  src="../images/ANAPEC.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -465,72 +467,71 @@ const IndexPage = (props) => {
         <p className={subtitle}>
           Programmons un meeting pour discuter votre projet
         </p>
-        <Container>
-          <Row>
-            <Col lg={6} style={{ marginLeft: "25%" }}>
-              <Form
-                onSubmit={handleSubmit}
-                name="Contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
+
+        <Row>
+          <Col lg={6} style={{ marginLeft: "25%" }}>
+            <Form
+              onSubmit={handleSubmit}
+              name="Contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="Contact" />
+              <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
+                <Form.Control
+                  id="name"
+                  type="text"
+                  name="name"
+                  onChange={handleChange}
+                  value={formState.name}
+                  placeholder="Nom ou raison social"
+                />
+              </Form.Group>
+              <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
+                <Form.Control
+                  id="email"
+                  type="email"
+                  name="email"
+                  onChange={handleChange}
+                  value={formState.email}
+                  placeholder="Email"
+                />
+              </Form.Group>
+              <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
+                <Form.Control
+                  id="objet"
+                  type="text"
+                  name="objet"
+                  onChange={handleChange}
+                  value={formState.objet}
+                  placeholder="Objet"
+                />
+              </Form.Group>
+              <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
+                <Form.Control
+                  id="besoin"
+                  as="textarea"
+                  rows="8"
+                  name="besoin"
+                  onChange={handleChange}
+                  value={formState.besoin}
+                  placeholder="Exprimez votre besoin ..."
+                />
+              </Form.Group>
+              <Button
+                type="submit"
+                style={{
+                  marginBottom: "50px",
+                  width: "200px",
+                  marginLeft: "200px",
+                }}
               >
-                <input type="hidden" name="form-name" value="Contact" />
-                <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
-                  <Form.Control
-                    id="name"
-                    type="text"
-                    name="name"
-                    onChange={handleChange}
-                    value={formState.name}
-                    placeholder="Nom ou raison social"
-                  />
-                </Form.Group>
-                <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
-                  <Form.Control
-                    id="email"
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                    value={formState.email}
-                    placeholder="Email"
-                  />
-                </Form.Group>
-                <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
-                  <Form.Control
-                    id="objet"
-                    type="text"
-                    name="objet"
-                    onChange={handleChange}
-                    value={formState.objet}
-                    placeholder="Objet"
-                  />
-                </Form.Group>
-                <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
-                  <Form.Control
-                    id="besoin"
-                    as="textarea"
-                    rows="8"
-                    name="besoin"
-                    onChange={handleChange}
-                    value={formState.besoin}
-                    placeholder="Exprimez votre besoin ..."
-                  />
-                </Form.Group>
-                <Button
-                  type="submit"
-                  style={{
-                    marginBottom: "50px",
-                    width: "200px",
-                    marginLeft: "200px",
-                  }}
-                >
-                  ENVOYER
-                </Button>
-              </Form>
-            </Col>
-          </Row>
-        </Container>
+                ENVOYER
+              </Button>
+            </Form>
+          </Col>
+        </Row>
       </div>
     </Layout>
   );

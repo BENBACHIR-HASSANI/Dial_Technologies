@@ -14,6 +14,9 @@ const Footer = () => {
         width: "  1519px",
         marginLeft: "-152px",
         height: "450px",
+        marginBottom: "0px",
+        paddingBottom: "0px",
+        minHeight: "80vh",
       }}
     >
       <Container>
@@ -22,6 +25,7 @@ const Footer = () => {
             <div
               style={{
                 marginLeft: "52px",
+                marginTop: "28px",
               }}
             >
               <br />
