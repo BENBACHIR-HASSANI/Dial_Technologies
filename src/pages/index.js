@@ -13,7 +13,6 @@ import {
   subtitle,
   items,
   item,
-  title,
   text,
   backgroundImage,
   blackOverlay,
