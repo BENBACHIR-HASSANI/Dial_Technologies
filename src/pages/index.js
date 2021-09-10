@@ -1,11 +1,12 @@
 // Step 1: Import React
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import { useState } from "react";
 import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 import { graphql, Link } from "gatsby";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 import {
   titre,
   tech,
@@ -25,6 +26,7 @@ import {
 
 // Step 2: Define your component
 const IndexPage = (props) => {
+  const title = "Dial Technologies (Dialy)";
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -57,7 +59,8 @@ const IndexPage = (props) => {
   };
 
   return (
-    <Layout pageTitle="Home Page">
+    <Layout>
+      <Helmet defaultTitle="Dial Technologies (Dialy)" title={title} />
       <Link to="/">
         <StaticImage alt="Logo Dial Technologies" src="../images/logo.png" />
       </Link>
@@ -184,7 +187,7 @@ const IndexPage = (props) => {
         >
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <Link to="/anapec">
+              <Link to="/anapecCompany">
                 <StaticImage
                   alt="ANAPEC"
                   src="../images/ANAPEC.png"
@@ -197,15 +200,17 @@ const IndexPage = (props) => {
               </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="AUSIM"
-                src="../images/AUSIM.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/ausim">
+                <StaticImage
+                  alt="AUSIM"
+                  src="../images/AUSIM.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -219,28 +224,32 @@ const IndexPage = (props) => {
               />
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="CNRA"
-                src="../images/CNRA.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/cnra">
+                <StaticImage
+                  alt="CNRA"
+                  src="../images/CNRA.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
           </tr>
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Cooper"
-                src="../images/Cooper.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/cooper">
+                <StaticImage
+                  alt="Cooper"
+                  src="../images/Cooper.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -254,15 +263,17 @@ const IndexPage = (props) => {
               />
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Douane"
-                src="../images/Douane.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/douane">
+                <StaticImage
+                  alt="Douane"
+                  src="../images/Douane.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -278,15 +289,17 @@ const IndexPage = (props) => {
           </tr>
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="INWI"
-                src="../images/INWI.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/inwi">
+                <StaticImage
+                  alt="INWI"
+                  src="../images/INWI.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -324,37 +337,43 @@ const IndexPage = (props) => {
           </tr>
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Malitel"
-                src="../images/Malitel.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/malitel">
+                <StaticImage
+                  alt="Malitel"
+                  src="../images/Malitel.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Marocaine-Vie"
-                src="../images/Marocaine-Vie.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/marocaineVie">
+                <StaticImage
+                  alt="Marocaine-Vie"
+                  src="../images/Marocaine-Vie.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Ministere-Transport"
-                src="../images/Ministere-Transport.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/ministreTransport">
+                <StaticImage
+                  alt="Ministere-Transport"
+                  src="../images/Ministere-Transport.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -370,61 +389,71 @@ const IndexPage = (props) => {
           </tr>
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Orange"
-                src="../images/Orange.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/orange">
+                <StaticImage
+                  alt="Orange"
+                  src="../images/Orange.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="PG"
-                src="../images/PG.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/pg">
+                <StaticImage
+                  alt="PG"
+                  src="../images/PG.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Rawbank"
-                src="../images/Rawbank.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/rawbank">
+                <StaticImage
+                  alt="Rawbank"
+                  src="../images/Rawbank.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="RCAR"
-                src="../images/RCAR.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/rcar">
+                <StaticImage
+                  alt="RCAR"
+                  src="../images/RCAR.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
           </tr>
           <tr style={{ height: "16.66%", border: "1px solid gray" }}>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Richbond"
-                src="../images/Richbond-1.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/richbond">
+                <StaticImage
+                  alt="Richbond"
+                  src="../images/Richbond-1.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
               <StaticImage
@@ -449,15 +478,17 @@ const IndexPage = (props) => {
               />
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <StaticImage
-                alt="Wafa-Assurance"
-                src="../images/Wafa-Assurance.png"
-                style={{
-                  width: "140px",
-                  alignItems: "center",
-                  marginLeft: "80px",
-                }}
-              />
+              <Link to="/wafaAssurance">
+                <StaticImage
+                  alt="Wafa-Assurance"
+                  src="../images/Wafa-Assurance.png"
+                  style={{
+                    width: "140px",
+                    alignItems: "center",
+                    marginLeft: "80px",
+                  }}
+                />
+              </Link>
             </td>
           </tr>
         </table>
@@ -486,6 +517,7 @@ const IndexPage = (props) => {
                   onChange={handleChange}
                   value={formState.name}
                   placeholder="Nom ou raison social"
+                  style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
               <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
@@ -496,6 +528,7 @@ const IndexPage = (props) => {
                   onChange={handleChange}
                   value={formState.email}
                   placeholder="Email"
+                  style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
               <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
@@ -506,6 +539,7 @@ const IndexPage = (props) => {
                   onChange={handleChange}
                   value={formState.objet}
                   placeholder="Objet"
+                  style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
               <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
@@ -517,6 +551,7 @@ const IndexPage = (props) => {
                   onChange={handleChange}
                   value={formState.besoin}
                   placeholder="Exprimez votre besoin ..."
+                  style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
               <Button
@@ -525,6 +560,9 @@ const IndexPage = (props) => {
                   marginBottom: "50px",
                   width: "200px",
                   marginLeft: "200px",
+                  borderRadius: "0px",
+                  backgroundColor: "#A5B800",
+                  border: "0px solid white",
                 }}
               >
                 ENVOYER

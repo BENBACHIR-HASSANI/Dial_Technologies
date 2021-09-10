@@ -3,5 +3,17 @@ import {
   faPhoneAlt,
   faEnvelope,
   faMapMarkerAlt,
+  faLightbulb,
+  faMobileAlt,
+  faDesktop,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faPhoneAlt, faEnvelope, faMapMarkerAlt);
+library.add(
+  faPhoneAlt,
+  faEnvelope,
+  faMapMarkerAlt,
+  faLightbulb,
+  faMobileAlt,
+  faDesktop,
+  faEdit
+);

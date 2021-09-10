@@ -119,6 +119,16 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
 }
+.backgroundImageCompany {
+  height: 50vh;
+  margin-top: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1519px;
+  margin-left: -152px;
+  height: 500px;
+}
 .blackOverlay {
   display: -webkit-flex; /* Safari */
   display: flex;
@@ -130,7 +140,7 @@ nav {
 }
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 .contentBox {
-  max-width: 700px;
+  max-width: 1100px;
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
 }
@@ -143,4 +153,36 @@ nav {
   padding: 10px;
   display: inline-block;
   vertical-align: middle;
+}
+.paragraph {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #393838;
+}
+.input {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+.input:focus {
+  outline: none;
+  border: 2px solid #a5b800;
+}
+.elements {
+  width: 1100px;
+  padding: 10px;
+  text-align: center;
+  margin-left: 350px;
+  color: #393838;
+}
+.element {
+  width: 350px;
+  padding: 10px;
+  margin-top: 80px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #393838;
+  text-align: center;
 }
