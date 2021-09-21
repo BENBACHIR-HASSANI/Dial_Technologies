@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import "../utils/font-awesome";
+import { FormattedMessage } from "gatsby-plugin-intl";
 import { Row, Col, Container } from "react-bootstrap";
 
 const Footer = () => {
@@ -32,7 +33,7 @@ const Footer = () => {
               <br />
 
               <h4 style={{ color: "white", marginBottom: "80px" }}>
-                Contactez-nous
+                <FormattedMessage id="contactez_nous" />
               </h4>
               <h5 className="icons" style={{ color: "#00b3b8", float: "left" }}>
                 <FontAwesomeIcon icon={"phone-alt"} />
@@ -51,12 +52,14 @@ const Footer = () => {
                 <FontAwesomeIcon icon={"map-marker-alt"} />
               </h5>
               <h5 style={{ float: "left", marginLeft: "10px" }}>
-                74, Bd Abdelmoumen 6éme étage, Casablanca, Maroc
+                <FormattedMessage id="adresse" />
               </h5>
               <br />
               <br />
               <br />
-              <h4 style={{ color: "white" }}>Suivez-nous</h4>
+              <h4 style={{ color: "white" }}>
+                <FormattedMessage id="suivez_nous" />
+              </h4>
               <Link to="https://www.facebook.com/dialtechnologies.net/">
                 <StaticImage
                   src="../images/facebook.png"

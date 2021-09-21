@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -79,17 +80,13 @@ const CnraPage = (props) => {
                 textShadow: "1px 1px #3f4d96",
               }}
             >
-              Caisse Nationale de Retraites et d'Assurances (CNRA)
+              <FormattedMessage id="titre_cnra" />
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile SMART CNRA
+              <FormattedMessage id="h2_cnra" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Ma Route est une application mobile que nous avons mise en place
-              pour le compte du ministère d’équipement et de transport au Maroc.
-              Elle est dédiée aux usagers de la route afin de leur permettre de
-              définir leurs itinéraires et être notifiés des incidents dans la
-              route.
+              <FormattedMessage id="parag_cnra" />
             </p>
           </div>
         </div>
@@ -97,7 +94,9 @@ const CnraPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="CNRA"
               src="../images/CNRA.png"
@@ -107,30 +106,34 @@ const CnraPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Afin de mettre en garde les usagers de la route sur l’ensemble des
-              incidents entravant leurs itinéraires, le ministère d’équipement
-              et de transport du Maroc a prévu mettre à leur disposition un
-              système automatique assurant cette fonction.
+              <FormattedMessage id="besoin_parag_cnra" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              A travers une application web/mobile bilingue – Arabe et Français,
-              nous avons répondu au besoin du ministère:
+              <FormattedMessage id="solutions_cnra" />A travers une application
               <ul style={{ marginTop: "35px" }}>
                 <li>
-                  Développement de l’application sous Android, iOS et HTML5
+                  <FormattedMessage id="solution1_cnra" />
                 </li>
-                <li>Conception UX/UI de l’application</li>
-                <li>Développement du backoffice d’administration</li>
+                <li>
+                  <FormattedMessage id="solution2_cnra" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_cnra" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -205,7 +208,7 @@ const CnraPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -235,7 +238,7 @@ const CnraPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -247,7 +250,7 @@ const CnraPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
           <div className={element}>
@@ -258,14 +261,14 @@ const CnraPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT WEB
+              <FormattedMessage id="web" />
             </h5>
           </div>
         </div>
       </div>
-      <div>
+      <div style={{ height: "450px" }}>
         <StaticImage
-          src="../images/CNRA1.png"
+          src="../images/CNRA_1.png"
           alt="CNRA screen shot 1"
           style={{
             marginLeft: "250px",
@@ -276,17 +279,17 @@ const CnraPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/CNRA2.png"
+          src="../images/CNRA_2.png"
           alt="CNRA screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/CNRA3.png"
+          src="../images/CNRA_3.png"
           alt="CNRA screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/CNRA4.png"
+          src="../images/CNRA_4.png"
           alt="CNRA screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
@@ -295,7 +298,7 @@ const CnraPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default CnraPage;
+export default injectIntl(CnraPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

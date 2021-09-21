@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -78,15 +79,13 @@ const AusimPage = (props) => {
                 textShadow: "1px 1px #3f4d96",
               }}
             >
-              Association des Utilisateurs des Systèmes d'Information au Maroc
+              <FormattedMessage id="titre_ausim" />
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile pour les Assises de l'AUSIM
+              <FormattedMessage id="h2_ausim" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Application de gestion de l’événement des assises de l’AUSIM
-              permettant l’inscription de participants, l’annonce du programme,
-              des intervenantes et des partenaires.
+              <FormattedMessage id="parag_ausim" />
             </p>
           </div>
         </div>
@@ -94,7 +93,9 @@ const AusimPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Organisation</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="organisation" />
+            </h5>
             <StaticImage
               alt="AUSIM"
               src="../images/AUSIM.png"
@@ -104,25 +105,35 @@ const AusimPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              L’AUSIM a émis un besoin de mettre en place une application mobile
-              hybride dédiée aux assises qu’elle organise.
+              <FormattedMessage id="besoin_parag_ausim" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              En réponse au besoin de l’AUSIM, nous avons assuré:
+              <FormattedMessage id="solutions_ausim" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Accompagnement en stratégie mobile</li>
-                <li>Conception UI/UX de l’application mobile C</li>
-                <li>Développement de l’application mobile</li>
+                <li>
+                  <FormattedMessage id="solution1_ausim" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution2_ausim" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_ausim" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -197,7 +208,7 @@ const AusimPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -227,7 +238,7 @@ const AusimPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -239,14 +250,14 @@ const AusimPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Ausim1.png"
+          src="../images/Ausim_1.png"
           alt="Ausim screen shot 1"
           style={{
             marginLeft: "350px",
@@ -257,12 +268,12 @@ const AusimPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Ausim2.png"
+          src="../images/Ausim_2.png"
           alt="Ausim screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Ausim3.png"
+          src="../images/Ausim_3.png"
           alt="Ausim screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
@@ -271,7 +282,7 @@ const AusimPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default AusimPage;
+export default injectIntl(AusimPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

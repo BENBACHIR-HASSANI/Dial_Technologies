@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import { graphql, Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -43,14 +44,14 @@ const RawbankPage = (props) => {
               S2M
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Design & UI de l’Application Rawbank
+              <FormattedMessage id="h2_raw" />
             </h2>
           </div>
         </div>
       </BackgroundImage>
 
       <StaticImage
-        src="../images/RAWBank1.png"
+        src="../images/RAWBank_1.png"
         alt="RAWBank screen shot 1"
         style={{
           marginLeft: "250px",
@@ -61,17 +62,17 @@ const RawbankPage = (props) => {
         }}
       />
       <StaticImage
-        src="../images/RAWBank2.png"
+        src="../images/RAWBank_2.png"
         alt="RAWBank screen shot 2"
         style={{ width: "158px", marginTop: "60px", marginRight: "30px" }}
       />
       <StaticImage
-        src="../images/RAWBank3.png"
+        src="../images/RAWBank_3.png"
         alt="RAWBank screen shot 3"
         style={{ marginTop: "60px", marginRight: "30px", width: "158px" }}
       />
       <StaticImage
-        src="../images/RAWBank4.png"
+        src="../images/RAWBank_4.png"
         alt="RAWBank screen shot 4"
         style={{ marginTop: "60px", marginRight: "30px", width: "158px" }}
       />
@@ -79,7 +80,7 @@ const RawbankPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default RawbankPage;
+export default injectIntl(RawbankPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

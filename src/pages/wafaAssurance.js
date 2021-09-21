@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,11 +82,10 @@ const WafaAssurancePage = (props) => {
               Wafa Assurance
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Applications Mobiles "My Wafa"
+              <FormattedMessage id="h2_wafa" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Applications mobiles pour les services d’assurance, l’assistance
-              des clients et la sensibilisation à travers des quizz
+              <FormattedMessage id="parag_wafa" />
             </p>
           </div>
         </div>
@@ -93,45 +93,46 @@ const WafaAssurancePage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="Wafa Assurance"
-              src="../images/Wafaassurance.png"
+              src="../images/Wafa_assurance.png"
               style={{
                 alignItems: "center",
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Wafa Assurance avait pour objectif de mettre en place une
-              application mobile mettant en avant les services d’assurances et
-              une seconde pour les quizz. Elle a par ailleurs émis sa demande
-              d’avoir une deuxième version de son application intégrant la
-              demande de devis, l’assistance des clients et l’annonce des
-              pharmacies de garde.
+              <FormattedMessage id="besoin_parag_wafa" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons suivi, pour la mise en place des applications de Wafa
-              Assurance, les étapes suivantes:
+              <FormattedMessage id="solutions_wafa" />
+
               <ul style={{ marginTop: "35px" }}>
                 <li>
-                  Développement des applications mobiles pour les supports
-                  Android, iPhone et iPad
+                  <FormattedMessage id="solution1_wafa" />
                 </li>
                 <li>
-                  Conception UX/UI des applications en respectant la charte
-                  graphique de Wafa Assurance
+                  <FormattedMessage id="solution2_wafa" />
                 </li>
-                <li>Publications des applications dans les stores</li>
+                <li>
+                  <FormattedMessage id="solution3_wafa" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -206,7 +207,7 @@ const WafaAssurancePage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -236,7 +237,7 @@ const WafaAssurancePage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h6>
             </Link>
           </div>
@@ -248,14 +249,14 @@ const WafaAssurancePage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-105px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h6>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Wafa-Assurance1.png"
+          src="../images/Wafa-Assurance_1.png"
           alt="Wafa-Assurance screen shot 1"
           style={{
             marginLeft: "150px",
@@ -266,27 +267,27 @@ const WafaAssurancePage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance2.png"
+          src="../images/Wafa-Assurance_2.png"
           alt="Wafa-Assurance screen shot 2"
           style={{ width: "160px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance3.png"
+          src="../images/Wafa-Assurance_3.png"
           alt="Wafa-Assurance screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance4.png"
+          src="../images/Wafa-Assurance_4.png"
           alt="Wafa-Assurance screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance5.png"
+          src="../images/Wafa-Assurance_5.png"
           alt="Wafa-Assurance screen shot 5"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance6.png"
+          src="../images/Wafa-Assurance_6.png"
           alt="Wafa-Assurance screen shot 6"
           style={{
             marginLeft: "150px",
@@ -296,27 +297,27 @@ const WafaAssurancePage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance7.png"
+          src="../images/Wafa-Assurance_7.png"
           alt="Wafa-Assurance screen shot 7"
           style={{ width: "160px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance8.png"
+          src="../images/Wafa-Assurance_8.png"
           alt="Wafa-Assurance screen shot 8"
           style={{ marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance9.png"
+          src="../images/Wafa-Assurance_9.png"
           alt="Wafa-Assurance screen shot 9"
           style={{ marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance10.png"
+          src="../images/Wafa-Assurance_10.png"
           alt="Wafa-Assurance screen shot 10"
           style={{ marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance11.png"
+          src="../images/Wafa-Assurance_11.png"
           alt="Wafa-Assurance screen shot 11"
           style={{
             marginLeft: "60px",
@@ -326,17 +327,17 @@ const WafaAssurancePage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance12.png"
+          src="../images/Wafa-Assurance_12.png"
           alt="Wafa-Assurance screen shot 12"
           style={{ width: "255px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance13.png"
+          src="../images/Wafa-Assurance_13.png"
           alt="Wafa-Assurance screen shot 13"
           style={{ marginRight: "30px", width: "255px" }}
         />
         <StaticImage
-          src="../images/Wafa-Assurance14.png"
+          src="../images/Wafa-Assurance_14.png"
           alt="Wafa-Assurance screen shot 14"
           style={{ marginRight: "30px", width: "255px" }}
         />
@@ -345,7 +346,7 @@ const WafaAssurancePage = (props) => {
   );
 };
 // Step 3: Export your component
-export default WafaAssurancePage;
+export default injectIntl(WafaAssurancePage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

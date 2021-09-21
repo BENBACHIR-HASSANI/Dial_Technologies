@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -79,17 +80,13 @@ const MinistereTransportPage = (props) => {
                 textShadow: "1px 1px #3f4d96",
               }}
             >
-              Ministère des Equipements et des Transports
+              <FormattedMessage id="titre_min" />
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile "Ma Route"
+              <FormattedMessage id="h2_min" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Ma Route est une application mobile que nous avons mise en place
-              pour le compte du ministère d’équipement et de transport au Maroc.
-              Elle est dédiée aux usagers de la route afin de leur permettre de
-              définir leurs itinéraires et d’être notifiés des incidents dans la
-              route.
+              <FormattedMessage id="parag_min" />
             </p>
           </div>
         </div>
@@ -97,39 +94,45 @@ const MinistereTransportPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="Ministere Transport"
-              src="../images/Ministere.png"
+              src="../images/Ministere_.png"
               style={{
                 alignItems: "center",
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Afin de mettre en garde les usagers de la route sur l’ensemble des
-              incidents entravant leurs itinéraires, le ministère d’équipement
-              et de transport du Maroc a prévu de mettre à leur disposition un
-              système automatique assurant cette fonction.
+              <FormattedMessage id="besoin_parag_min" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              A travers une application web/mobile bilingue – Arabe et Français,
-              nous avons répondu au besoin du ministère:
+              <FormattedMessage id="solutions_min" />
               <ul style={{ marginTop: "35px" }}>
                 <li>
-                  Développement de l’application sous Android, iOS et HTML5
+                  <FormattedMessage id="solution1_min" />
                 </li>
-                <li>Conception UX/UI de l’application</li>
-                <li>Développement du backoffice d’administration</li>
+                <li>
+                  <FormattedMessage id="solution2_min" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_min" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -204,7 +207,7 @@ const MinistereTransportPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -234,7 +237,7 @@ const MinistereTransportPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -246,7 +249,7 @@ const MinistereTransportPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
           <div className={element}>
@@ -257,14 +260,14 @@ const MinistereTransportPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT WEB
+              <FormattedMessage id="web" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Ma-Route-Ministere1.png"
+          src="../images/Ma-Route-Ministere_1.png"
           alt="Ma-Route-Ministere screen shot 1"
           style={{
             marginLeft: "250px",
@@ -275,17 +278,17 @@ const MinistereTransportPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Ma-Route-Ministere2.png"
+          src="../images/Ma-Route-Ministere_2.png"
           alt="Ma-Route-Ministere screen shot 2"
           style={{ width: "154px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Ma-Route-Ministere3.png"
+          src="../images/Ma-Route-Ministere_3.png"
           alt="Ma-Route-Ministere screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px", width: "154px" }}
         />
         <StaticImage
-          src="../images/Ma-Route-Ministere4.png"
+          src="../images/Ma-Route-Ministere_4.png"
           alt="Ma-Route-Ministere screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px", width: "154px" }}
         />
@@ -294,7 +297,7 @@ const MinistereTransportPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default MinistereTransportPage;
+export default injectIntl(MinistereTransportPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

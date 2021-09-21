@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,13 +82,10 @@ const RichbondPage = (props) => {
               Richbond
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Applications Mobiles Métiers
+              <FormattedMessage id="titre_rich" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Applications de gestion pour les métiers de vente et de
-              recouvrement de Richbond, permettant aux clients de suivre leurs
-              commandes et aux représentants de l’entreprise d’assurer le suivi
-              des recouvrements
+              <FormattedMessage id="parag_rich" />
             </p>
           </div>
         </div>
@@ -95,7 +93,9 @@ const RichbondPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="Richbond"
               src="../images/Richbond-1.png"
@@ -104,28 +104,35 @@ const RichbondPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Richbond avait pour objectif la mise en place de deux applications
-              mobiles: Une application destinée à ses clients qui leur permet de
-              suivre leurs commandes et une seconde destinée à ses representants
-              pour le suivi des recouvrements.
+              <FormattedMessage id="besoin_parag_rich" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons répondu au besoin de Richbond en assurant les missions
-              qui suivent:
+              <FormattedMessage id="solutions_rich" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Développement des applications sous Android</li>
-                <li>Design des applications</li>
-                <li>Développement du backoffice</li>
+                <li>
+                  <FormattedMessage id="solution1_rich" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution2_rich" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_rich" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -200,7 +207,7 @@ const RichbondPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -230,7 +237,7 @@ const RichbondPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h6>
             </Link>
           </div>
@@ -242,14 +249,14 @@ const RichbondPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-105px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h6>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Richbond1.png"
+          src="../images/Richbond_1.png"
           alt="Richbond screen shot 1"
           style={{
             marginLeft: "250px",
@@ -260,22 +267,22 @@ const RichbondPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Richbond2.png"
+          src="../images/Richbond_2.png"
           alt="Richbond screen shot 2"
           style={{ width: "160px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Richbond3.png"
+          src="../images/Richbond_3.png"
           alt="Richbond screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Richbond4.png"
+          src="../images/Richbond-4.png"
           alt="Richbond screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Richbond5.png"
+          src="../images/Richbond_5.png"
           alt="Richbond screen shot 5"
           style={{
             marginLeft: "250px",
@@ -285,12 +292,12 @@ const RichbondPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Richbond6.png"
+          src="../images/Richbond_6.png"
           alt="Richbond screen shot 6"
           style={{ width: "160px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Richbond7.png"
+          src="../images/Richbond_7.png"
           alt="Richbond screen shot 7"
           style={{ marginRight: "30px", width: "160px" }}
         />
@@ -299,7 +306,7 @@ const RichbondPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default RichbondPage;
+export default injectIntl(RichbondPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

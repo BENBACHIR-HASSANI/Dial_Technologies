@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,11 +82,10 @@ const CooperPage = (props) => {
               Cooper Pharma
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile pour les Visiteurs Medicaux
+              <FormattedMessage id="h2_cooper" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Application mobile destinée aux visiteurs medicaux de Cooper
-              Pharma pour assurer les fonctions de gestion interne.
+              <FormattedMessage id="parag_cooper" />
             </p>
           </div>
         </div>
@@ -93,7 +93,9 @@ const CooperPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="COOPER"
               src="../images/Cooper.png"
@@ -103,30 +105,35 @@ const CooperPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Cooper Pharma avait besoin d’une application mobile qui met à
-              disposition de ses visiteurs medicaux un ensemble de
-              fonctionnalités dont la gestion de produits, la mise en relation
-              avec les médecins et le suivi d’événements.
+              <FormattedMessage id="besoin_parag_cooper" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons réalisé le projet avec succès en assurant:
+              <FormattedMessage id="solutions_cooper" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Développement de l’application sous Android</li>
                 <li>
-                  Conception UI de l’application en respectant la charte
-                  graphique de Cooper Pharma
+                  <FormattedMessage id="solution1_cooper" />
                 </li>
-                <li>Développement du backoffice d’administration</li>
+                <li>
+                  <FormattedMessage id="solution2_cooper" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_cooper" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -201,7 +208,7 @@ const CooperPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -231,7 +238,7 @@ const CooperPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -243,14 +250,14 @@ const CooperPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Cooper1.png"
+          src="../images/Cooper-1.png"
           alt="Cooper screen shot 1"
           style={{
             marginLeft: "350px",
@@ -261,7 +268,7 @@ const CooperPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Cooper2.png"
+          src="../images/Cooper_2.png"
           alt="Cooper screen shot 2"
           style={{ width: "255px", marginTop: "60px", marginRight: "30px" }}
         />
@@ -270,7 +277,7 @@ const CooperPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default CooperPage;
+export default injectIntl(CooperPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

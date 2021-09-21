@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import { graphql, Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -41,16 +42,16 @@ const DouanePage = (props) => {
                 textShadow: "1px 1px #3f4d96",
               }}
             >
-              Administration des Douanes et Impôts Indirects
+              <FormattedMessage id="titre_douane" />
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Développement d'une Application Mobile pour les Agents Douaniers
+              <FormattedMessage id="h2_douane" />
             </h2>
           </div>
         </div>
       </BackgroundImage>
       <StaticImage
-        src="../images/Douane1.png"
+        src="../images/Douane_1.png"
         alt="Douane screen shot 1"
         style={{
           marginLeft: "200px",
@@ -61,7 +62,7 @@ const DouanePage = (props) => {
         }}
       />
       <StaticImage
-        src="../images/Douane2.png"
+        src="../images/Douane-2.png"
         alt="Douane screen shot 2"
         style={{ marginTop: "60px", marginRight: "30px", width: "300px" }}
       />
@@ -69,7 +70,7 @@ const DouanePage = (props) => {
   );
 };
 // Step 3: Export your component
-export default DouanePage;
+export default injectIntl(DouanePage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

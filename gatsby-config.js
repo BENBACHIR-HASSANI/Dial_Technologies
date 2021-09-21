@@ -31,5 +31,25 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `n8l4rkpn51g6`,
+        accessToken: `PKNCOaKkKWPkxaYhWAClY7LOc-IIEBZ4PD4fYTSU3jw`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`fr`, `en`],
+        // language file path
+        defaultLanguage: `fr`,
+        // option to redirect to `/fr` when connecting `/`
+        redirect: true,
+      },
+    },
   ],
 };

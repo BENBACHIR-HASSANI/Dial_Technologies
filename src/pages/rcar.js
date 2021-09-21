@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -79,16 +80,13 @@ const RCARPage = (props) => {
                 textShadow: "1px 1px #3f4d96",
               }}
             >
-              Régime Collectif d'Allocation de Retraite
+              <FormattedMessage id="titre_rcar" />
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile pour les Pensionnés du RCAR
+              <FormattedMessage id="h2_rcar" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Application mobile permettant aux pensionnés de consulter leurs
-              situation de compte, les bulletins de paie et les derniers
-              virements de leurs pensions ainsi que de faire la simulations de
-              ces dernières
+              <FormattedMessage id="parag_rcar" />
             </p>
           </div>
         </div>
@@ -96,7 +94,9 @@ const RCARPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="RCAR"
               src="../images/RCAR.png"
@@ -105,31 +105,35 @@ const RCARPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Le RCAR souhaitait être plus proche de ses pensionnés à travers
-              une application mobile qui fournit un module de simulation des
-              actifs et services de consultation de la situation de ces
-              derniers.
+              <FormattedMessage id="besoin_parag_rcar" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons réalisé avec succès les missions suivantes pour le
-              RCAR:
+              <FormattedMessage id="solutions_rcar" />
+
               <ul style={{ marginTop: "35px" }}>
                 <li>
-                  Développement de l’application pour les supports iPhone,
-                  Android et Blackberry
+                  <FormattedMessage id="solution1_rcar" />
                 </li>
-                <li>Conception UX/UI de l’application</li>
-                <li>Publication de l’application dans les stores</li>
+                <li>
+                  <FormattedMessage id="solution2_rcar" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_rcar" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -204,7 +208,7 @@ const RCARPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -234,7 +238,7 @@ const RCARPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h6>
             </Link>
           </div>
@@ -246,14 +250,14 @@ const RCARPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-105px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h6>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/RCAR1.png"
+          src="../images/RCAR_1.png"
           alt="RCAR screen shot 1"
           style={{
             marginLeft: "250px",
@@ -264,17 +268,17 @@ const RCARPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/RCAR2.png"
+          src="../images/RCAR_2.png"
           alt="RCAR screen shot 2"
           style={{ width: "160px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/RCAR3.png"
+          src="../images/RCAR_3.png"
           alt="RCAR screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/RCAR4.png"
+          src="../images/RCAR_4.png"
           alt="RCAR screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
@@ -283,7 +287,7 @@ const RCARPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default RCARPage;
+export default injectIntl(RCARPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

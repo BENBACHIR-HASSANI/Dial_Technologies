@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,11 +82,10 @@ const PGPage = (props) => {
               Procter & Gamble
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Solution Mobile Hybride "Sharaka"
+              <FormattedMessage id="h2_pg" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Application mobile dédiée aux clients de P&G et qui leur permet
-              d’accéder aux offres de ses marques et de gérer leurs comptes
+              <FormattedMessage id="parag_pg" />
             </p>
           </div>
         </div>
@@ -93,7 +93,9 @@ const PGPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="PG"
               src="../images/PG.png"
@@ -103,30 +105,38 @@ const PGPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              P&G souhaitait mettre en place une solution mobile pour la gestion
-              de ses clients.
+              <FormattedMessage id="besoin_parag_pg" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              A travers une application hybride en arabe dialectal, nous avons
-              répondu au besoin de P&G :
+              <FormattedMessage id="solutions_pg" />
               <ul style={{ marginTop: "35px" }}>
-                <li>Développement de la solution Sharaka sous Android</li>
                 <li>
-                  Design de l’application en respectant la charte graphique de
-                  P&G
+                  <FormattedMessage id="solution1_pg" />
                 </li>
-                <li>Développement et hébérgement du CMS</li>
-                <li>Fidélisation des clients P&G</li>
+                <li>
+                  <FormattedMessage id="solution2_pg" />
+                </li>
+
+                <li>
+                  <FormattedMessage id="solution3_pg" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution4_pg" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -201,7 +211,7 @@ const PGPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -231,7 +241,7 @@ const PGPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h6>
             </Link>
           </div>
@@ -243,14 +253,14 @@ const PGPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-105px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h6>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/PG1.png"
+          src="../images/PG-1.png"
           alt="PG screen shot 1"
           style={{
             marginLeft: "250px",
@@ -261,17 +271,17 @@ const PGPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/PG2.png"
+          src="../images/PG_2.png"
           alt="PG screen shot 2"
           style={{ width: "160px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/PG3.png"
+          src="../images/PG_3.png"
           alt="PG screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/PG4.png"
+          src="../images/PG_4.png"
           alt="PG screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
@@ -280,7 +290,7 @@ const PGPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default PGPage;
+export default injectIntl(PGPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,11 +82,10 @@ const MarocaineViePage = (props) => {
               La Marocaine Vie
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile LMV
+              <FormattedMessage id="h2_mar" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Accompagnement par Dial Technologies en mettant en place
-              l’application mobile LMV.
+              <FormattedMessage id="parag_mar" />
             </p>
           </div>
         </div>
@@ -93,36 +93,47 @@ const MarocaineViePage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="Marocaine Vie"
-              src="../images/MarocaineVie.png"
+              src="../images/Marocaine_Vie.png"
               style={{
                 width: "300px",
                 alignItems: "center",
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              La Marocaine vie avait pour besoin d’accompagnement dans la
-              définition du besoin de mise en place de l’application mobile LMV
-              , l’étude fonctionnelle technique et la recette de cette derniere
+              <FormattedMessage id="besoin_parag_mar" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons réalisé le projet de La Marocaine Vie en trois étapes
+              <FormattedMessage id="solutions_mar" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Benchmark, brainstorming et rédaction du CPS</li>
-                <li>Etude fonctionnelle et technique</li>
-                <li>Design de l’application UI/UX</li>
+                <li>
+                  <FormattedMessage id="solution1_mar" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution2_mar" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_mar" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -197,7 +208,7 @@ const MarocaineViePage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -227,7 +238,7 @@ const MarocaineViePage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -239,14 +250,14 @@ const MarocaineViePage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Marocaine-Vie1.png"
+          src="../images/Marocaine-Vie_1.png"
           alt="Marocaine-Vie screen shot 1"
           style={{
             marginLeft: "250px",
@@ -257,17 +268,17 @@ const MarocaineViePage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Marocaine-Vie2.png"
+          src="../images/Marocaine-Vie_2.png"
           alt="Marocaine-Vie screen shot 2"
           style={{ width: "160px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Marocaine-Vie3png.png"
+          src="../images/Marocaine-Vie_3.png"
           alt="Marocaine-Vie screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Marocaine-Vie4.png"
+          src="../images/Marocaine-Vie_4.png"
           alt="Marocaine-Vie screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
@@ -276,7 +287,7 @@ const MarocaineViePage = (props) => {
   );
 };
 // Step 3: Export your component
-export default MarocaineViePage;
+export default injectIntl(MarocaineViePage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

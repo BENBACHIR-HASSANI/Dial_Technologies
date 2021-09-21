@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -78,46 +79,57 @@ const OrangePage = (props) => {
                 textShadow: "1px 1px #3f4d96",
               }}
             >
-              Orange Maroc - Méditel
+              <FormattedMessage id="titre_orange" />
             </h5>
-            <h1 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Interface Web et Mobile pour Info/Alerte SMS et Foot
-            </h1>
+            <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
+              <FormattedMessage id="h2_orange" />
+            </h2>
           </div>
         </div>
       </BackgroundImage>
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="Orange"
-              src="../images/oranges.png"
+              src="../images/oranges_.png"
               style={{
                 alignItems: "center",
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Orange Maroc (Meditel) avait besoin de plateformes de
-              développement et de gestion de contenu pour ses services Info,
-              alertes SMS et football.
+              <FormattedMessage id="besoin_parag_orange" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons répondu au besoin d’Orange Maroc en assurant:
+              <FormattedMessage id="solutions_orange" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Fourniture, Hébergement et gestion de la solution</li>
-                <li>Fourniture et animation du contenu infos et SMS</li>
-                <li>Interface de reporting</li>
+                <li>
+                  <FormattedMessage id="solution1_orange" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution2_orange" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_orange" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -192,7 +204,7 @@ const OrangePage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -222,7 +234,7 @@ const OrangePage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -237,7 +249,7 @@ const OrangePage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              SERVICE SMS
+              <FormattedMessage id="sms" />
             </h5>
           </div>
           <div className={element} style={{ marginLeft: "-100px" }}>
@@ -248,7 +260,7 @@ const OrangePage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT WEB
+              <FormattedMessage id="web" />
             </h5>
           </div>
           <div
@@ -262,14 +274,14 @@ const OrangePage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              MARKETING DE CONTENU
+              <FormattedMessage id="contenu" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Orange1.png"
+          src="../images/Orange_1.png"
           alt="Orange screen shot 1"
           style={{
             marginLeft: "200px",
@@ -280,7 +292,7 @@ const OrangePage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Orange2.png"
+          src="../images/Orange_2.png"
           alt="Orange screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px", width: "300px" }}
         />
@@ -289,7 +301,7 @@ const OrangePage = (props) => {
   );
 };
 // Step 3: Export your component
-export default OrangePage;
+export default injectIntl(OrangePage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 import { graphql, Link } from "gatsby";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import {
   titre,
   tech,
@@ -67,9 +68,11 @@ const IndexPage = (props) => {
         <StaticImage alt="Technologies" src="../images/tech.jpg" />
       </div>
       <div id="services">
-        <p className={titre}>Nos Services</p>
+        <p className={titre}>
+          <FormattedMessage id="Nos_services" />
+        </p>
         <p className={subtitle}>
-          Assurez votre transformation digitale de bout en bout
+          <FormattedMessage id="Nos_services_details" />
         </p>
         <div className={items}>
           <div className={item}>
@@ -78,9 +81,11 @@ const IndexPage = (props) => {
               src="../images/message.png"
               style={{ width: "30px" }}
             />
-            <p className={title}>Messagerie</p>
+            <p className={title}>
+              <FormattedMessage id="Messagerie" />
+            </p>
             <p className={text}>
-              Plus de proximité avec vos clients à travers une messagerie 360
+              <FormattedMessage id="Messagerie_details" />
             </p>
           </div>
           <div className={item}>
@@ -89,9 +94,11 @@ const IndexPage = (props) => {
               src="../images/send.png"
               style={{ width: "30px" }}
             />
-            <p className={title}>Transformation Digitale</p>
+            <p className={title}>
+              <FormattedMessage id="Transformation_digitale" />
+            </p>
             <p className={text}>
-              Mieux prendre le virage du digital à travers nos nombreuses offres
+              <FormattedMessage id="Transformation_digitale_details" />
             </p>
           </div>
           <div className={item}>
@@ -100,9 +107,11 @@ const IndexPage = (props) => {
               src="../images/settings.png"
               style={{ width: "30px" }}
             />
-            <p className={title}>Intelligence Artificielle</p>
+            <p className={title}>
+              <FormattedMessage id="Intelligence_artificielle" />
+            </p>
             <p className={text}>
-              Développez des produits et des solutions axés sur l’IA
+              <FormattedMessage id="Intelligence_artificielle_details" />
             </p>
           </div>
           <div className={item}>
@@ -111,9 +120,11 @@ const IndexPage = (props) => {
               src="../images/smartphone.png"
               style={{ width: "30px" }}
             />
-            <p className={title}>Solutions de mobilité</p>
+            <p className={title}>
+              <FormattedMessage id="Solutions_mobilité" />
+            </p>
             <p className={text}>
-              Restez en contact avec vos collaborateurs & clients
+              <FormattedMessage id="Solutions_mobilité_details" />
             </p>
           </div>
         </div>
@@ -125,10 +136,11 @@ const IndexPage = (props) => {
           >
             <div className={blackOverlay}>
               <div className={contentBox}>
-                <h3>Quelques faits</h3>
+                <h3>
+                  <FormattedMessage id="Quelques_faits" />
+                </h3>
                 <h5>
-                  Une expertise approuvée et une relation cordiale avec nos
-                  clients
+                  <FormattedMessage id="Quelques_faits_details" />
                 </h5>
                 <div className={statistics}>
                   <div className={statistic}>
@@ -137,7 +149,9 @@ const IndexPage = (props) => {
                       src="../images/coffee.png"
                       style={{ width: "40px" }}
                     />
-                    <h3>Tasses de café</h3>
+                    <h3>
+                      <FormattedMessage id="TassesCafé" />
+                    </h3>
                     <h1>986</h1>
                   </div>
                   <div className={statistic}>
@@ -146,7 +160,9 @@ const IndexPage = (props) => {
                       src="../images/star.png"
                       style={{ width: "40px" }}
                     />
-                    <h3>Projets</h3>
+                    <h3>
+                      <FormattedMessage id="Projets" />
+                    </h3>
                     <h1>723</h1>
                   </div>
                   <div className={statistic}>
@@ -155,7 +171,9 @@ const IndexPage = (props) => {
                       src="../images/trophy.png"
                       style={{ width: "40px" }}
                     />
-                    <h3>Réconpenses</h3>
+                    <h3>
+                      <FormattedMessage id="Réconpenses" />
+                    </h3>
                     <h1>7</h1>
                   </div>
                   <div className={statistic}>
@@ -164,7 +182,9 @@ const IndexPage = (props) => {
                       src="../images/people.png"
                       style={{ width: "40px" }}
                     />
-                    <h3>Collaborateurs</h3>
+                    <h3>
+                      <FormattedMessage id="Collaborateurs" />
+                    </h3>
                     <h1>43</h1>
                   </div>
                 </div>
@@ -174,9 +194,11 @@ const IndexPage = (props) => {
         </div>
       </div>
       <div id="clients">
-        <p className={titre}>Nos Clients</p>
+        <p className={titre}>
+          <FormattedMessage id="Nos_clients" />
+        </p>
         <p className={subtitle}>
-          Soyez les prochains à bénéficier de notre expertise
+          <FormattedMessage id="Nos_clients_details" />
         </p>
         <table
           style={{
@@ -414,7 +436,7 @@ const IndexPage = (props) => {
               </Link>
             </td>
             <td style={{ width: "25%", border: "1px solid gray" }}>
-              <Link to="/rawbank">
+              <Link to="/rawbanK">
                 <StaticImage
                   alt="Rawbank"
                   src="../images/Rawbank.png"
@@ -493,9 +515,12 @@ const IndexPage = (props) => {
         </table>
       </div>
       <div id="contact">
-        <p className={titre}>Passez à l'Action</p>
+        <p className={titre}>
+          <FormattedMessage id="Passez_action" />
+          Passez à l'Action
+        </p>
         <p className={subtitle}>
-          Programmons un meeting pour discuter votre projet
+          <FormattedMessage id="Passez_action_details" />
         </p>
 
         <Row>
@@ -564,7 +589,7 @@ const IndexPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                ENVOYER
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -574,11 +599,14 @@ const IndexPage = (props) => {
   );
 };
 
-// Step 3: Export your component
-export default IndexPage;
-
 export const pageQuery = graphql`
   query {
+    allContentfulEntry(filter: { node_locale: { eq: "$locale" } }) {
+      nodes {
+        contentful_id
+      }
+    }
+
     indexImage: file(relativePath: { eq: "teamWork.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1800) {
@@ -588,3 +616,6 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// Step 3: Export your component
+export default injectIntl(IndexPage);

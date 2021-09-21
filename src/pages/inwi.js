@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,11 +82,10 @@ const InwiPage = (props) => {
               Inwi
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Agence Mobile
+              <FormattedMessage id="h2_inwi" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Développement d’applications mobiles pour le compte de l’opérateur
-              télécoms Inwi.
+              <FormattedMessage id="parag_inwi" />
             </p>
           </div>
         </div>
@@ -93,7 +93,9 @@ const InwiPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="INWI"
               src="../images/INWI.png"
@@ -104,31 +106,35 @@ const InwiPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              Inwi avait besoin d’une agence mobile pour le développement
-              d’applications mobiles pour le compte de l’opérateur.
+              <FormattedMessage id="besoin_parag_inwi" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons assuré avec succès pour Inwi les prestations suivantes:
+              <FormattedMessage id="solutions_inwi" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Design des applications mobiles</li>
                 <li>
-                  Développement des applications sous différents systèmes
-                  d’exploitation (OS)
+                  <FormattedMessage id="solution1_inwi" />
                 </li>
                 <li>
-                  Développement du backoffice pour une administration
-                  self-service
+                  <FormattedMessage id="solution2_inwi" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_inwi" />
                 </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -203,7 +209,7 @@ const InwiPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -233,7 +239,7 @@ const InwiPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -245,14 +251,14 @@ const InwiPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
         </div>
       </div>
-      <div>
+      <div style={{ height: "450px" }}>
         <StaticImage
-          src="../images/Inwi1.png"
+          src="../images/Inwi-1.png"
           alt="Inwi screen shot 1"
           style={{
             marginLeft: "320px",
@@ -263,12 +269,12 @@ const InwiPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Inwi2.png"
+          src="../images/Inwi-2.png"
           alt="Inwi screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Inwi3.png"
+          src="../images/Inwi-3.png"
           alt="Inwi screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
@@ -277,7 +283,7 @@ const InwiPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default InwiPage;
+export default injectIntl(InwiPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

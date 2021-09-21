@@ -11,6 +11,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer";
 import { StaticImage } from "gatsby-plugin-image";
+import { FormattedMessage, changeLocale } from "gatsby-plugin-intl";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,42 +23,51 @@ const Layout = ({ children }) => {
       }
     }
   `);
+
   return (
     <div className={container}>
       <div className={header}>
         <title>{data.site.siteMetadata.title}</title>
         <nav>
           <div style={{ marginTop: "-30px" }}>
-            <Link
-              to="#"
+            <a
+              onClick={() => changeLocale("en")}
               style={{
                 color: "#3f4d96",
                 textDecoration: "none",
-                marginLeft: "535px",
               }}
             >
-              <StaticImage
-                src="../images/usa-flag.png"
-                alt="USA"
+              <a
+                onClick={() => changeLocale("fr")}
                 style={{
-                  width: "18px",
-                  marginTop: "3px",
-                  marginRight: "5px",
+                  color: "#3f4d96",
+                  textDecoration: "none",
+                  marginLeft: "535px",
                 }}
-              />
-              EN
-            </Link>
+              >
+                <StaticImage
+                  src="../images/usa-flag.png"
+                  alt="USA"
+                  style={{
+                    width: "18px",
+                    marginTop: "3px",
+                    marginRight: "5px",
+                  }}
+                />
+                <FormattedMessage id="lang" />
+              </a>
+            </a>
           </div>
 
           <ul className={navLinks}>
             <li className={navLinkItem}>
-              <Link to="../#services" className={navLinkText}>
-                Nos Services
+              <Link to="/en/#services" className={navLinkText}>
+                <FormattedMessage id="Nos_services" />
               </Link>
             </li>
             <li className={navLinkItem}>
-              <Link to="../#clients" className={navLinkText}>
-                Nos Clients
+              <Link to="/en/#clients" className={navLinkText}>
+                <FormattedMessage id="Nos_clients" />
               </Link>
             </li>
             <li className={navLinkItem}>
@@ -66,7 +76,7 @@ const Layout = ({ children }) => {
               </Link>
             </li>
             <li className={navLinkItem}>
-              <Link to="../#contact" className={navLinkText}>
+              <Link to="/en/#contact" className={navLinkText}>
                 Contact
               </Link>
             </li>

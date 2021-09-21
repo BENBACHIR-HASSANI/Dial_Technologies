@@ -8,6 +8,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
+
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,14 +83,10 @@ const AnapecPage = (props) => {
               ANAPEC
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Applications ANAPEC de Recherche d'Emploi
+              <FormattedMessage id="titre_anapec" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Applications pour la recherche d’emploi au Maroc et à l’étranger
-              permettant aux candidats de postuler pour les offres proposées,
-              d’être notifiés des nouvelles annonces, de localiser les agences
-              ANAPEC et de bénéficier de conseil et capsules au sujet de la
-              recherche d’emploi.
+              <FormattedMessage id="parag_anapec" />
             </p>
           </div>
         </div>
@@ -96,7 +94,9 @@ const AnapecPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="ANAPEC"
               src="../images/ANAPEC.png"
@@ -107,33 +107,36 @@ const AnapecPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              {" "}
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              L’ANAPEC avait besoin de mettre en place 2 applications offrant
-              des services d’aide à la recherche d’emplois , conseils ,
-              actualités , candidatures aux offres dont une est destinée aux
-              migrants.
+              <FormattedMessage id="besoin_parag" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              Nous avons réalisé pour le compte de l’ANAPEC deux applications
-              mobiles:
+              <FormattedMessage id="solutions" />
+
               <ul style={{ marginTop: "35px" }}>
                 <li>
-                  Développement des application sous Android & iOS & HTML5
+                  <FormattedMessage id="solution_1" />
                 </li>
                 <li>
-                  Design des applications en respectant la charte graphique de
-                  l’ANAPEC
+                  <FormattedMessage id="solution_2" />
                 </li>
-                <li>Développement du backoffice</li>
+                <li>
+                  <FormattedMessage id="solution_3" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -208,7 +211,7 @@ const AnapecPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -238,7 +241,7 @@ const AnapecPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -250,7 +253,7 @@ const AnapecPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
           <div className={element}>
@@ -261,14 +264,14 @@ const AnapecPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT WEB
+              <FormattedMessage id="web" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/anapec1.png"
+          src="../images/anapec_1.png"
           alt="Anapec screen shot 1"
           style={{
             marginLeft: "250px",
@@ -279,17 +282,17 @@ const AnapecPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/anapec2.png"
+          src="../images/anapec_2.png"
           alt="Anapec screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/anapec3.png"
+          src="../images/anapec_3.png"
           alt="Anapec screen shot 3"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/anapec4.png"
+          src="../images/anapec_4.png"
           alt="Anapec screen shot 4"
           style={{ marginTop: "60px", marginRight: "30px" }}
         />
@@ -298,7 +301,7 @@ const AnapecPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default AnapecPage;
+export default injectIntl(AnapecPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {

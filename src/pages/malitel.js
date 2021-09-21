@@ -8,6 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { injectIntl, FormattedMessage } from "gatsby-plugin-intl";
 import "../utils/font-awesome";
 import {
   backgroundImageCompany,
@@ -81,11 +82,10 @@ const MalitelPage = (props) => {
               Malitel
             </h5>
             <h2 style={{ fontWeight: "bold", marginTop: "20px" }}>
-              Application Mobile pour les Services Malitel
+              <FormattedMessage id="h2_matiel" />
             </h2>
             <p style={{ marginTop: "30px" }}>
-              Application mobile pour les clients mobiles de Malitel permettant
-              d’avoir accès à ses produits et services.
+              <FormattedMessage id="parag_matiel" />
             </p>
           </div>
         </div>
@@ -93,7 +93,9 @@ const MalitelPage = (props) => {
       <Container>
         <Row>
           <Col lg={7}>
-            <h5 style={{ marginTop: "60px" }}>Entreprise</h5>
+            <h5 style={{ marginTop: "60px" }}>
+              <FormattedMessage id="entreprise" />
+            </h5>
             <StaticImage
               alt="Malitel"
               src="../images/Malitel.png"
@@ -103,30 +105,35 @@ const MalitelPage = (props) => {
                 marginTop: "20px",
               }}
             />
-            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>Besoin</h5>
+            <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
+              <FormattedMessage id="besoin" />
+            </h5>
             <p className={paragraph}>
-              SOTELMA a voulu proposer à ses clients une application mobile
-              self-service sur Android et iOS qui lui permet de vulgariser ses
-              produits et services tout en y incluant la composante des réseaux
-              sociaux
+              <FormattedMessage id="besoin_parag_matiel" />
             </p>
             <h5 style={{ marginTop: "40px", marginBottom: "35px" }}>
               Solution
             </h5>
             <p className={paragraph}>
-              En réponse à ce besoin nous avons assuré pour Malitel:
+              <FormattedMessage id="solutions_matiel" />
+
               <ul style={{ marginTop: "35px" }}>
-                <li>Développement de l’application sous Android et iOS</li>
                 <li>
-                  Design de l’application en respectant la charte graphique de
-                  Malitel
+                  <FormattedMessage id="solution1_matiel" />
                 </li>
-                <li>Développement du CMS</li>
+                <li>
+                  <FormattedMessage id="solution2_matiel" />
+                </li>
+                <li>
+                  <FormattedMessage id="solution3_matiel" />
+                </li>
               </ul>
             </p>
           </Col>
           <Col lg={5} style={{ marginTop: "60px" }}>
-            <h5>Besoin d'un projet similaire?</h5>
+            <h5>
+              <FormattedMessage id="besoin_form" />
+            </h5>
             <Form
               onSubmit={handleSubmit}
               name="Contact"
@@ -201,7 +208,7 @@ const MalitelPage = (props) => {
                   border: "0px solid white",
                 }}
               >
-                Envoyer
+                <FormattedMessage id="envoyer" />
               </Button>
             </Form>
           </Col>
@@ -231,7 +238,7 @@ const MalitelPage = (props) => {
                   color: "#393838",
                 }}
               >
-                CONSEIL EN STRATEGIE
+                <FormattedMessage id="conseil" />
               </h5>
             </Link>
           </div>
@@ -243,14 +250,14 @@ const MalitelPage = (props) => {
               className={title}
               style={{ marginTop: "50px", marginLeft: "-115px", float: "left" }}
             >
-              DÉVELOPPEMENT MOBILE
+              <FormattedMessage id="mobile" />
             </h5>
           </div>
         </div>
       </div>
       <div>
         <StaticImage
-          src="../images/Malitel1.png"
+          src="../images/Malitel_1.png"
           alt="Malitel screen shot 1"
           style={{
             marginLeft: "250px",
@@ -261,17 +268,17 @@ const MalitelPage = (props) => {
           }}
         />
         <StaticImage
-          src="../images/Malitel2.png"
+          src="../images/Malitel_2.png"
           alt="Malitel screen shot 2"
           style={{ width: "160px", marginTop: "60px", marginRight: "30px" }}
         />
         <StaticImage
-          src="../images/Malitel3.png"
+          src="../images/Malitel_3.png"
           alt="Malitel screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
         <StaticImage
-          src="../images/Malitel4.png"
+          src="../images/Malitel_4.png"
           alt="Malitel screen shot 2"
           style={{ marginTop: "60px", marginRight: "30px", width: "160px" }}
         />
@@ -280,7 +287,7 @@ const MalitelPage = (props) => {
   );
 };
 // Step 3: Export your component
-export default MalitelPage;
+export default injectIntl(MalitelPage);
 export const pageQuery = graphql`
   query {
     indexImage: file(relativePath: { eq: "lumiere.png" }) {
