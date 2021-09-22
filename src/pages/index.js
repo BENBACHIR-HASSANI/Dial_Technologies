@@ -533,40 +533,49 @@ const IndexPage = (props) => {
               data-netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="Contact" />
-              <Form.Group controlId="name" style={{ marginBottom: "30px" }}>
+              <Form.Group controlId="name" style={{ marginBottom: "20px" }}>
+                <label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  <FormattedMessage id="nom" />
+                </label>
                 <Form.Control
                   id="name"
                   type="text"
                   name="name"
                   onChange={handleChange}
                   value={formState.name}
-                  placeholder="Nom ou raison social"
                   style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
-              <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
+              <Form.Group controlId="email" style={{ marginBottom: "20px" }}>
+                <label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  Email
+                </label>
                 <Form.Control
                   id="email"
                   type="email"
                   name="email"
                   onChange={handleChange}
                   value={formState.email}
-                  placeholder="Email"
                   style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
-              <Form.Group controlId="objet" style={{ marginBottom: "30px" }}>
+              <Form.Group controlId="objet" style={{ marginBottom: "20px" }}>
+                <label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  <FormattedMessage id="Objet" />
+                </label>
                 <Form.Control
                   id="objet"
                   type="text"
                   name="objet"
                   onChange={handleChange}
                   value={formState.objet}
-                  placeholder="Objet"
                   style={{ borderRadius: "0px" }}
                 />
               </Form.Group>
-              <Form.Group controlId="besoin" style={{ marginBottom: "30px" }}>
+              <Form.Group controlId="besoin" style={{ marginBottom: "20px" }}>
+                <label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  <FormattedMessage id="exprimez_besoin" />
+                </label>
                 <Form.Control
                   id="besoin"
                   as="textarea"
@@ -574,7 +583,6 @@ const IndexPage = (props) => {
                   name="besoin"
                   onChange={handleChange}
                   value={formState.besoin}
-                  placeholder="Exprimez votre besoin ..."
                   style={{ borderRadius: "0px" }}
                 />
               </Form.Group>

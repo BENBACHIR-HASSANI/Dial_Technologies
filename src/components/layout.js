@@ -42,10 +42,10 @@ const Layout = ({ children }) => {
                 style={{
                   color: "#3f4d96",
                   textDecoration: "none",
-                  marginLeft: "535px",
+                  marginLeft: "555px",
                 }}
               >
-                <StaticImage
+                {/* <StaticImage
                   src="../images/usa-flag.png"
                   alt="USA"
                   style={{
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
                     marginTop: "3px",
                     marginRight: "5px",
                   }}
-                />
+                /> */}
                 <FormattedMessage id="lang" />
               </a>
             </a>

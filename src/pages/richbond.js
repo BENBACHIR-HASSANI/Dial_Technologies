@@ -141,49 +141,58 @@ const RichbondPage = (props) => {
               data-netlify-honeypot="bot-field"
             >
               <input type="hidden" name="form-name" value="Contact" />
-              <Form.Group
-                controlId="name"
-                style={{ marginTop: "30px", marginBottom: "30px" }}
-              >
+              <Form.Group controlId="name" style={{ marginBottom: "20px" }}>
+                <Form.Label
+                  style={{
+                    color: "#6c757d",
+                    marginBottom: "10px",
+                    marginTop: "30px",
+                  }}
+                >
+                  <FormattedMessage id="nom" />
+                </Form.Label>
                 <Form.Control
                   id="name"
                   type="text"
                   name="name"
                   onChange={handleChange}
                   value={formState.name}
-                  placeholder="Nom ou raison social*"
                   style={{ borderRadius: "0px" }}
-                  className={input}
                 />
               </Form.Group>
-              <Form.Group controlId="email" style={{ marginBottom: "30px" }}>
+              <Form.Group controlId="email" style={{ marginBottom: "20px" }}>
+                <Form.Label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  Email
+                </Form.Label>
                 <Form.Control
                   id="email"
                   type="email"
                   name="email"
                   onChange={handleChange}
                   value={formState.email}
-                  placeholder="Email*"
                   style={{ borderRadius: "0px" }}
-                  className={input}
                 />
               </Form.Group>
               <Form.Group
                 controlId="telephone"
-                style={{ marginBottom: "30px" }}
+                style={{ marginBottom: "20px" }}
               >
+                <Form.Label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  <FormattedMessage id="telephone" />
+                </Form.Label>
                 <Form.Control
                   id="telephone"
                   type="text"
-                  name="telephone"
                   onChange={handleChange}
                   value={formState.objet}
-                  placeholder="Téléphone"
                   style={{ borderRadius: "0px" }}
                   className={input}
                 />
               </Form.Group>
-              <Form.Group controlId="message" style={{ marginBottom: "30px" }}>
+              <Form.Group controlId="message" style={{ marginBottom: "20px" }}>
+                <Form.Label style={{ color: "#6c757d", marginBottom: "10px" }}>
+                  Message
+                </Form.Label>
                 <Form.Control
                   id="message"
                   as="textarea"
@@ -191,7 +200,6 @@ const RichbondPage = (props) => {
                   name="message"
                   onChange={handleChange}
                   value={formState.besoin}
-                  placeholder="Message"
                   style={{ borderRadius: "0px" }}
                   className={input}
                 />
